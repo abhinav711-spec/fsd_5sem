@@ -1,0 +1,287 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Registration Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+.container{
+    width:360px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align:center;
+    color:#2575fc;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:2px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#2575fc;
+    outline:none;
+    box-shadow:0 0 8px rgba(37,117,252,.4);
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    background:#2575fc;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0d5ae5;
+    transform:scale(1.03);
+}
+
+#display{
+    margin-top:20px;
+    padding:15px;
+    border-radius:10px;
+    background:#eef5ff;
+    display:none;
+}
+
+#display h3{
+    color:#2575fc;
+    margin-bottom:10px;
+}
+
+.data{
+    margin:8px 0;
+    padding:8px;
+    background:white;
+    border-left:5px solid #2575fc;
+    border-radius:5px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>✨ Registration Form ✨</h2>
+
+    <input type="text" id="name" placeholder="Enter Your Name">
+
+    <input type="email" id="email" placeholder="Enter Your Email">
+
+    <input type="password" id="password" placeholder="Enter Your Password">
+
+    <button onclick="register()">Register</button>
+
+    <div id="display"></div>
+
+</div>
+
+<script>
+function register(){
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    document.getElementById("display").style.display = "block";
+
+    document.getElementById("display").innerHTML = `
+        <h3>🎉 Registration Successful</h3>
+
+        <div class="data"><b>👤 Name:</b> ${name}</div>
+        <div class="data"><b>📧 Email:</b> ${email}</div>
+        <div class="data"><b>🔒 Password:</b> ${"*".repeat(password.length)}</div>
+    `;
+}
+</script>
+
+</body>
+</html> -->
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration & Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:400px;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align:center;
+    color:#2575fc;
+    margin-bottom:15px;
+}
+
+h3{
+    color:#2575fc;
+    margin:15px 0 10px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:2px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+input:focus{
+    border-color:#2575fc;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    background:#2575fc;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d5ae5;
+}
+
+#display,#loginResult{
+    margin-top:15px;
+    padding:12px;
+    border-radius:8px;
+    background:#eef5ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>✨ Registration Form ✨</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<input type="email" id="email" placeholder="Enter Email">
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="register()">Register</button>
+
+<div id="display"></div>
+
+<hr style="margin:20px 0;">
+
+<h2>🔑 Login</h2>
+
+<input type="email" id="loginEmail" placeholder="Enter Email">
+<input type="password" id="loginPassword" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+
+<div id="loginResult"></div>
+
+</div>
+
+<script>
+
+// Variables to store registered user
+let regName = "";
+let regEmail = "";
+let regPassword = "";
+
+// Registration Function
+function register(){
+
+    regName = document.getElementById("name").value;
+    regEmail = document.getElementById("email").value;
+    regPassword = document.getElementById("password").value;
+
+    document.getElementById("display").innerHTML = `
+        <h3>✅ Registration Successful</h3>
+        <p><b>Name:</b> ${regName}</p>
+        <p><b>Email:</b> ${regEmail}</p>
+        <p><b>Password:</b> ${"*".repeat(regPassword.length)}</p>
+    `;
+}
+
+// Login Function
+function login(){
+
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+
+    if(email === regEmail && password === regPassword){
+        document.getElementById("loginResult").innerHTML =
+        "<h3 style='color:green;'>✅ Login Successful</h3><p>Welcome, <b>"+regName+"</b>!</p>";
+    }
+    else{
+        document.getElementById("loginResult").innerHTML =
+        "<h3 style='color:red;'>❌ Invalid Email or Password</h3>";
+    }
+}
+
+</script>
+
+</body>
+</html>
+```
