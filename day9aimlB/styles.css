@@ -1,0 +1,196 @@
+:root {
+    font-family: 'Segoe UI', sans-serif;
+    color: #183b43;
+    background: #f4f0e8;
+    --ink: #183b43;
+    --muted: #627479;
+    --teal: #087f80;
+    --teal-dark: #075456;
+    --coral: #ee765f;
+    --paper: #fffdf8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 8% 8%, rgba(238, 118, 95, 0.18), transparent 24rem),
+        radial-gradient(circle at 92% 82%, rgba(8, 127, 128, 0.14), transparent 28rem),
+        #f4f0e8;
+}
+
+.directory {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.directory-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 48px 28px 0;
+}
+
+.directory-header h1 {
+    margin: 4px 0 0;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--coral);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.domain-filter {
+    display: grid;
+    gap: 8px;
+    min-width: 210px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.domain-filter select {
+    padding: 12px 36px 12px 14px;
+    border: 1px solid rgba(24, 59, 67, 0.2);
+    border-radius: 6px;
+    color: var(--ink);
+    background: var(--paper);
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin: 0 auto;
+    padding: 28px;
+}
+
+.student-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 410px;
+    overflow: hidden;
+    padding: 28px;
+    border: 1px solid rgba(24, 59, 67, 0.1);
+    border-radius: 14px;
+    background: var(--paper);
+    box-shadow: 0 14px 30px rgba(24, 59, 67, 0.09);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.student-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--teal), var(--coral));
+}
+
+.student-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 36px rgba(24, 59, 67, 0.15);
+}
+
+.student-card h1 {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: 1.7rem;
+    letter-spacing: 0;
+}
+
+.student-card h2 {
+    margin: 20px 0 8px;
+    color: var(--teal);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+
+.student-card p {
+    margin: 6px 0;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+.student-card ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.student-card li {
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: var(--teal-dark);
+    background: #e6f1ed;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.student-card button {
+    margin-top: auto;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 6px;
+    color: #ffffff;
+    background: var(--teal);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.student-card button:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .directory-header {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 22px;
+        padding: 32px 16px 0;
+    }
+
+    .domain-filter {
+        min-width: 0;
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 32px 16px;
+    }
+
+    .student-card {
+        min-height: 390px;
+        padding: 24px;
+    }
+}
