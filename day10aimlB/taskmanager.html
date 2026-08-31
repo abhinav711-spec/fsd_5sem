@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="taskmanager.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-header"><div><p class="eyebrow">Your work, in focus</p><h1>Task Manager</h1><p class="subtitle">Plan clearly. Finish confidently.</p></div><div class="date-badge" id="todayDate"></div></header>
+    <section class="add-task-panel"><div><p class="eyebrow">Create a task</p><h2>What needs to get done?</h2></div><form id="taskForm" class="task-form"><label class="sr-only" for="taskInput">Task name</label><input id="taskInput" type="text" placeholder="Enter a task name..." required><label class="sr-only" for="assignmentInput">Assignment</label><input id="assignmentInput" type="text" placeholder="Assignment" required><label class="sr-only" for="marketInput">Market</label><select id="marketInput" required><option value="">Choose market</option><option>India</option><option>USA</option><option>Europe</option><option>Global</option></select><button class="primary-button" type="submit"><span>+</span> Add task</button></form></section>
+    <section class="stats-grid" aria-label="Task summary"><article class="stat-card total"><span class="stat-icon">&#9632;</span><div><p>Total tasks</p><strong id="totalTasks">0</strong></div></article><article class="stat-card completed"><span class="stat-icon">&#10003;</span><div><p>Completed tasks</p><strong id="completedTasks">0</strong></div></article><article class="stat-card pending"><span class="stat-icon">&#9675;</span><div><p>Pending tasks</p><strong id="pendingTasks">0</strong></div></article></section>
+    <section class="workspace"><div class="task-list-panel"><div class="section-heading"><div><p class="eyebrow">Overview</p><h2 id="listTitle">All tasks</h2></div><span class="task-count" id="visibleCount">0 tasks</span></div><nav class="filter-tabs" aria-label="Task views"><button class="filter-button active" data-filter="all" type="button">All tasks</button><button class="filter-button" data-filter="completed" type="button">Completed</button><button class="filter-button" data-filter="pending" type="button">Pending</button></nav><div id="taskList" class="task-list"></div></div><aside class="completed-panel"><div class="section-heading"><div><p class="eyebrow">Archive</p><h2>Completed tasks</h2></div><span class="check-mark">&#10003;</span></div><div id="completedList" class="completed-list"></div></aside></section>
+    <section class="filter-panel"><div><p class="eyebrow">Refine your view</p><h2>Filter tasks</h2></div><div class="selectors"><label>Assignment<select id="assignmentFilter"><option value="all">All assignments</option></select></label><label>Market<select id="marketFilter"><option value="all">All markets</option><option>India</option><option>USA</option><option>Europe</option><option>Global</option></select></label><button id="clearFilters" class="text-button" type="button">Clear filters</button></div></section>
+  </main>
+  <script src="taskmanager.js"></script>
+</body>
+</html>
