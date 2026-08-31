@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | Task Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+  <main class="registration-page">
+    <section class="intro-panel">
+      <a class="brand" href="taskmanager.html">Task<span>Manager</span></a>
+      <div class="intro-copy"><p class="eyebrow">Get organized</p><h1>Make room for meaningful work.</h1><p>Create your account and keep every task moving in the right direction.</p></div>
+      <p class="intro-note">Simple planning for busy minds.</p>
+    </section>
+    <section class="form-panel">
+      <div class="form-heading"><p class="eyebrow">New workspace</p><h2>Create your account</h2><p>Already registered? <a href="taskmanager.html">Open task manager</a></p></div>
+      <form id="registrationForm" novalidate>
+        <div class="field-row"><div class="field"><label for="fullName">Full name</label><input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your name"><small class="error" id="fullNameError"></small></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><small class="error" id="emailError"></small></div></div>
+        <div class="field-row"><div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="10 digit number"><small class="error" id="phoneError"></small></div><div class="field"><label for="role">Your role</label><select id="role" name="role"><option value="">Choose a role</option><option>Student</option><option>Developer</option><option>Designer</option><option>Manager</option></select><small class="error" id="roleError"></small></div></div>
+        <div class="field-row"><div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters"><small class="error" id="passwordError"></small></div><div class="field"><label for="confirmPassword">Confirm password</label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat your password"><small class="error" id="confirmPasswordError"></small></div></div>
+        <label class="terms"><input id="terms" type="checkbox"><span>I agree to the terms and privacy policy.</span></label><small class="error" id="termsError"></small>
+        <button class="submit-button" type="submit">Create account <span>&rarr;</span></button>
+        <p class="success-message" id="successMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <script src="registration.js"></script>
+</body>
+</html>
