@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABES Engineering College | Student Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="STUDENTMANAGEMENTSYSTEM.CSS">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="college-bar">
+      <div class="college-brand">
+        <div class="college-logo" aria-label="ABES Engineering College logo"><span class="logo-star">✦</span><span class="logo-text">ABES</span></div>
+        <div><p class="college-name">ABES Engineering College</p><p class="college-location">Ghaziabad, Uttar Pradesh</p></div>
+      </div>
+      <span class="college-badge">✦ Excellence in Education</span>
+    </header>
+    <header class="page-header">
+      <div class="hero-copy">
+        <p class="eyebrow">✦ Academic records / 2026</p>
+        <h1>Student <span>Management</span> System</h1>
+        <p class="subtitle">A simple digital desk for tracking every learner's progress at ABES Engineering College.</p>
+        <div class="hero-tags"><span>◉ Easy to use</span><span>▣ Organized records</span><span>⌁ Live updates</span></div>
+      </div>
+      <div class="campus-image"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=85" alt="University campus building"><div class="image-caption"><span>⌂</span> ABES campus community</div></div>
+    </header>
+
+    <section class="panel form-panel" aria-labelledby="add-student-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">New record</p>
+          <h2 id="add-student-title">Add a student</h2>
+        </div>
+        <span class="record-count" id="recordCount">0 records</span>
+      </div>
+      <form id="studentForm">
+        <div class="form-row">
+          <label>
+            <span>♙ Student name</span>
+            <input type="text" id="studentName" placeholder="e.g. Aanya Sharma" required>
+          </label>
+          <label>
+            <span>№ Roll number</span>
+            <input type="text" id="rollNumber" placeholder="e.g. 24CS101" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>▤ Course</span>
+            <select id="course" required>
+              <option value="" selected disabled>Select a course</option>
+              <option>Web Development</option>
+              <option>Data Structures</option>
+              <option>Artificial Intelligence</option>
+              <option>Database Management</option>
+              <option>Computer Networks</option>
+            </select>
+          </label>
+          <label>
+            <span>✎ Marks <span class="label-hint">0 - 100</span></span>
+            <input type="number" id="marks" min="0" max="100" placeholder="Enter marks" required>
+          </label>
+        </div>
+        <button class="primary-button" type="submit"><span aria-hidden="true">＋</span> Add student</button>
+        <p class="form-message" id="formMessage" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="workspace" aria-label="Student records overview">
+      <div class="search-block">
+        <label class="search-label" for="searchInput">⌕ Search records</label>
+        <div class="search-wrap">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" id="searchInput" placeholder="Search by student name or roll number">
+        </div>
+        <p class="search-result" id="searchResult">Showing all records</p>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card accent-coral">
+          <span class="stat-icon" aria-hidden="true">♙</span>
+          <div><p>Total students</p><strong id="totalStudents">0</strong></div>
+        </article>
+        <article class="stat-card accent-teal">
+          <span class="stat-icon" aria-hidden="true">↗</span>
+          <div><p>Average marks</p><strong id="averageMarks">0<span class="small-unit">%</span></strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel table-panel" aria-labelledby="records-title">
+      <div class="section-heading table-heading">
+        <div>
+          <p class="section-kicker">▦ Live directory</p>
+          <h2 id="records-title">Student records</h2>
+        </div>
+        <span class="table-status"><span class="status-dot"></span>Auto-updated</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>♙ Student</th><th>№ Roll no.</th><th>▤ Course</th><th>✎ Marks</th><th>★ Grade</th><th>⚙ Action</th></tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon" aria-hidden="true">♙</div>
+          <h3>No student records yet</h3>
+          <p>Add your first student above to start building the directory.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer><strong>ABES Engineering College, Ghaziabad</strong> <span>•</span> Student Management System <span>•</span> Built for better learning records</footer>
+  </main>
+  <script src="STUDENTMANAGEMENTSYSTEM.JS"></script>
+</body>
+</html>
