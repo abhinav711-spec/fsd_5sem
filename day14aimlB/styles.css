@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 48px 20px;
+  color: #243247;
+  background: #f1f5f9;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.todo-card {
+  width: min(100%, 620px);
+  margin: 0 auto;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgb(15 23 42 / 8%);
+}
+
+h1 {
+  margin: 0 0 28px;
+  color: #1e3a5f;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.add-form,
+.edit-form {
+  display: flex;
+  gap: 10px;
+}
+
+.add-form input,
+.edit-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px 14px;
+  color: #243247;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.add-button,
+.save-button {
+  padding: 0 22px;
+  color: #fff;
+  background: #2563eb;
+}
+
+.add-button:hover,
+.save-button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.save-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.empty-message {
+  margin: 28px 0 0;
+  color: #64748b;
+  text-align: center;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.task-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.task-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.task-actions button,
+.edit-form button {
+  padding: 8px 11px;
+}
+
+.edit-button {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.delete-button {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.cancel-button {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 24px 14px;
+  }
+
+  .todo-card {
+    padding: 24px 18px;
+  }
+
+  .task-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .task-actions {
+    align-self: flex-end;
+  }
+
+  .edit-form {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .edit-form input {
+    flex-basis: 100%;
+  }
+}
