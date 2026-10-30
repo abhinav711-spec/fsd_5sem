@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Practice React concepts with a quick, interactive quiz."
+    />
+    <meta name="theme-color" content="#f6f7fb" />
+    <title>React Ready | Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="questions.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="React Ready home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>react<span class="brand-light">ready</span></span>
+        </a>
+        <div id="account-area" class="account-area">
+          <span class="topbar-note"><span class="status-dot"></span> Your daily
+            knowledge check</span>
+        </div>
+      </header>
+
+      <main id="app" class="main-content" aria-live="polite"></main>
+
+      <footer class="footer">
+        <span>Made for curious minds.</span>
+        <span>React fundamentals <span aria-hidden="true">·</span> 20 questions</span>
+      </footer>
+    </div>
+  </body>
+</html>
