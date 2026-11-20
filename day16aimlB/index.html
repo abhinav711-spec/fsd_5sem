@@ -15,99 +15,122 @@
     <div class="page-shell">
       <header class="topbar">
         <a class="brand" href="../day6aimlB/index.html" aria-label="React Commerce store">
-          <span class="brand-mark" aria-hidden="true">RC</span>
-          <span>React <span class="brand-light">Commerce</span></span>
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span class="brand-name">REACT <b>COMMERCE</b></span>
         </a>
-        <a class="store-link" href="../day6aimlB/index.html">Browse store <span aria-hidden="true">→</span></a>
+        <a class="store-link" href="../day6aimlB/index.html">
+          <span>Visit store</span>
+          <span class="store-link-arrow" aria-hidden="true">↗</span>
+        </a>
       </header>
 
       <main class="auth-layout">
-        <section class="intro">
-          <p class="eyebrow">A BETTER WAY TO SHOP</p>
-          <h1>Your next favorite<br />thing is <span>waiting.</span></h1>
-          <p class="intro-copy">
-            Sign in or create an account to explore the collection and keep your cart close.
-          </p>
-          <div class="intro-note">
-            <span class="note-icon" aria-hidden="true">✓</span>
-            <p><strong>Easy to pick up where you left off.</strong><br />Your cart is saved in this browser.</p>
+        <section class="intro" aria-labelledby="welcome-title">
+          <div class="intro-topline">
+            <p class="eyebrow">MEMBERS' EDITION</p>
+            <span class="edition">01 — 26</span>
           </div>
-          <div class="decorative-card" aria-hidden="true">
-            <span class="decorative-spark">✦</span>
-            <span>Good things,<br />one click away.</span>
-            <span class="decorative-arrow">↗</span>
+
+          <h1 id="welcome-title">Find your<br /><em>next favorite.</em></h1>
+          <p class="intro-copy">
+            Thoughtful objects, everyday essentials, and unexpected finds — all in one considered collection.
+          </p>
+
+          <div class="feature-row">
+            <div class="feature">
+              <span class="feature-number">01</span>
+              <p><strong>Curated weekly</strong><br />Fresh edits, less scrolling</p>
+            </div>
+            <div class="feature">
+              <span class="feature-number">02</span>
+              <p><strong>Saved for later</strong><br />Your cart stays with you</p>
+            </div>
+          </div>
+
+          <div class="collection-tag" aria-hidden="true">
+            <span>THE CURRENT EDIT</span>
+            <span>✦</span>
           </div>
         </section>
 
-        <section class="auth-card" aria-labelledby="auth-title">
-          <div class="card-mark" aria-hidden="true">RC</div>
-          <p class="card-eyebrow" id="mode-label">WELCOME BACK</p>
-          <h2 id="auth-title">Sign in to your account</h2>
-          <p class="card-subtitle" id="auth-subtitle">Enter your details to continue to the store.</p>
-
-          <p class="auth-message" id="auth-message" role="alert" aria-live="polite" hidden></p>
-
-          <form id="auth-form">
-            <div class="field-group" id="name-group" hidden>
-              <label for="auth-name">Your name</label>
-              <input
-                class="auth-input"
-                id="auth-name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                minlength="2"
-                maxlength="60"
-                placeholder="Alex Morgan"
-                required
-                disabled
-              />
+        <section class="auth-panel" aria-labelledby="auth-title">
+          <div class="auth-card">
+            <div class="card-heading">
+              <div>
+                <p class="card-eyebrow" id="mode-label">WELCOME BACK</p>
+                <h2 id="auth-title">Sign in</h2>
+              </div>
+              <span class="card-index" aria-hidden="true">↳</span>
             </div>
+            <p class="card-subtitle" id="auth-subtitle">Enter your details to continue to the store.</p>
 
-            <div class="field-group">
-              <label for="auth-email">Email address</label>
-              <input
-                class="auth-input"
-                id="auth-email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                maxlength="254"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
+            <p class="auth-message" id="auth-message" role="alert" aria-live="polite" hidden></p>
 
-            <div class="field-group">
-              <label for="auth-password">Password</label>
-              <input
-                class="auth-input"
-                id="auth-password"
-                name="password"
-                type="password"
-                autocomplete="current-password"
-                minlength="8"
-                placeholder="At least 8 characters"
-                required
-              />
-            </div>
+            <form id="auth-form">
+              <div class="field-group" id="name-group" hidden>
+                <label for="auth-name">Full name</label>
+                <input
+                  class="auth-input"
+                  id="auth-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  minlength="2"
+                  maxlength="60"
+                  placeholder="Alex Morgan"
+                  required
+                  disabled
+                />
+              </div>
 
-            <button class="submit-button" id="submit-button" type="submit">
-              Sign in <span aria-hidden="true">→</span>
-            </button>
-          </form>
+              <div class="field-group">
+                <label for="auth-email">Email address</label>
+                <input
+                  class="auth-input"
+                  id="auth-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
 
-          <p class="auth-switch">
-            <span id="switch-copy">New to React Commerce?</span>
-            <button class="text-button" id="mode-toggle" type="button">Create an account</button>
-          </p>
+              <div class="field-group">
+                <label for="auth-password">Password</label>
+                <div class="password-wrap">
+                  <input
+                    class="auth-input"
+                    id="auth-password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    minlength="8"
+                    placeholder="At least 8 characters"
+                    required
+                  />
+                  <button class="password-toggle" id="password-toggle" type="button" aria-label="Show password">Show</button>
+                </div>
+              </div>
+
+              <button class="submit-button" id="submit-button" type="submit">
+                <span>Sign in</span>
+                <span class="button-arrow" aria-hidden="true">→</span>
+              </button>
+            </form>
+
+            <p class="auth-switch">
+              <span id="switch-copy">New to React Commerce?</span>
+              <button class="text-button" id="mode-toggle" type="button">Create an account</button>
+            </p>
+          </div>
+
           <p class="local-notice">
-            Demo account data stays in this browser. This page is for practice and is not production authentication.
+            <span aria-hidden="true">●</span> Demo data is stored locally in this browser
           </p>
         </section>
       </main>
-
-      <footer class="footer">REACT COMMERCE <span aria-hidden="true">·</span> SHOP AT YOUR OWN PACE</footer>
     </div>
   </body>
 </html>

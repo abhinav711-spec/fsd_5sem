@@ -14,6 +14,8 @@ const authTitle = document.querySelector("#auth-title");
 const authSubtitle = document.querySelector("#auth-subtitle");
 const switchCopy = document.querySelector("#switch-copy");
 const message = document.querySelector("#auth-message");
+const passwordToggle = document.querySelector("#password-toggle");
+const submitLabel = submitButton.querySelector("span:first-child");
 
 let authMode = "login";
 
@@ -94,15 +96,25 @@ const setAuthMode = (mode) => {
   authSubtitle.textContent = registering
     ? "Create an account to continue to the store."
     : "Enter your details to continue to the store.";
-  submitButton.firstChild.textContent = registering ? "Create account " : "Sign in ";
+  submitLabel.textContent = registering ? "Create account" : "Sign in";
   switchCopy.textContent = registering ? "Already have an account?" : "New to React Commerce?";
   modeToggle.textContent = registering ? "Sign in" : "Create an account";
+  passwordInput.type = "password";
+  passwordToggle.textContent = "Show";
+  passwordToggle.setAttribute("aria-label", "Show password");
   message.hidden = true;
   message.textContent = "";
 };
 
 modeToggle.addEventListener("click", () => {
   setAuthMode(authMode === "login" ? "register" : "login");
+});
+
+passwordToggle.addEventListener("click", () => {
+  const isHidden = passwordInput.type === "password";
+  passwordInput.type = isHidden ? "text" : "password";
+  passwordToggle.textContent = isHidden ? "Hide" : "Show";
+  passwordToggle.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
 });
 
 form.addEventListener("submit", async (event) => {
@@ -112,7 +124,7 @@ form.addEventListener("submit", async (event) => {
   const registering = authMode === "register";
 
   submitButton.disabled = true;
-  submitButton.firstChild.textContent = registering ? "Creating account..." : "Signing in...";
+  submitLabel.textContent = registering ? "Creating account..." : "Signing in...";
 
   try {
     const users = readUsers();
@@ -156,7 +168,7 @@ form.addEventListener("submit", async (event) => {
     );
   } finally {
     submitButton.disabled = false;
-    submitButton.firstChild.textContent = authMode === "register" ? "Create account " : "Sign in ";
+    submitLabel.textContent = authMode === "register" ? "Create account" : "Sign in";
   }
 });
 
